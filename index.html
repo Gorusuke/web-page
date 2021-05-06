@@ -9,10 +9,10 @@
   <script src="https://kit.fontawesome.com/23192939c8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div>
+  <div class="container">
     <!-- Header -->
-    <header>
-      <ul>
+    <header class="header">
+      <ul class="header-container">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#sobre-mi">Sobre mi</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
@@ -21,21 +21,27 @@
       </ul>
     </header>
     <!-- Hero -->
-    <section id="inicio">
-      <h6>Bienvenido!</h6>
-      <h1>¡Hola! Soy Jose Garcia!
-        <span>Junior Front End developer</span>
-        y me gusta
-        <span>resolver problemas</span>
-      </h1>
-      <ul>
-        <li><i class="fas fa-file-export"></i></li>
-        <li><i class="fab fa-github-square"></i></li>
-        <li><i class="fab fa-linkedin"></i></li>
-      </ul>
+    <section id="inicio" class="hero">
+      <div class="hero-container">
+        <h6>¡Bienvenido!</h6>
+        <h1>¡Hola! Soy Jose Garcia!
+          <span class="hero-span">Junior Front End developer</span>
+          y me gusta
+          <span class="hero-styles">resolver problemas</span>
+        </h1>
+      </div>
+        <div>
+          <div class="skew"></div>
+        </div>
+        <ul class="icons-container">
+          <li><a href="#">Resume <i class="fas fa-file-export"></i></li></a>
+          <li><a href="https://github.com/Gorusuke" target="_blank" >Github <i class="fab fa-github-square"></i></li></a>
+          <li><a href="https://www.linkedin.com/in/jose-andres-garcia-montes-2985921b4/" target="_blank" >LinkeIn <i class="fab fa-linkedin"></i></li></a>
+        </ul>
+      
     </section>
     <!-- Sobre mi -->
-    <section id="sobre-mi">
+    <section id="sobre-mi" class="about-me">
       <h2>Sobre Mi</h2>
       <div>
         <div>
