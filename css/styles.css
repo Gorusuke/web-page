@@ -4,6 +4,7 @@
   --dark: #0a0a0a;
   --light: #f0f0f0;
   --background: #004776;
+  --text: #413737e6;
 }
 
 *,
@@ -49,7 +50,8 @@ ul{
 }
 
 .header-container li {
-  color: var(--primary);
+  /* font-family: "Montserrat", sans-serif; */
+  color: var(--text);
   font-size: 1.1rem;
   font-weight: 700;
   padding-top: 1.5rem;
@@ -57,7 +59,6 @@ ul{
   text-transform: uppercase;
   transition: all .3s ease;
   position: relative;
-  letter-spacing: 1px;
 }
 
 .header-container li > a::after{
@@ -65,7 +66,7 @@ ul{
   width: 0%;
   height: 5px;
   position: absolute;
-  background: var(--dark);
+  background: var(--secondary);
   bottom: 0%;
   left: 50%;
   border-radius: 10px;
@@ -76,9 +77,9 @@ ul{
   color: var(--secondary);
 }
 
-.header-container li > a:hover{
-  width: 100%;
-  left: 0;
+.header-container li > a:hover::after{
+  width: 130%;
+  left: -15%;
 }
 
 .hero{
@@ -101,7 +102,7 @@ ul{
 .hero-container > h1 {
   font-size: 4.5rem;
   line-height: 5rem;
-  color: #413737e6;
+  color: var(--text);
 }
 
 .hero-span {
@@ -117,7 +118,7 @@ ul{
   position: absolute;
   top: 100%;
   width: 100%;
-  height: 75%;
+  height: 80%;
   background: var(--background);
   transform-origin: top left;
   transform: skewY(-10deg);
@@ -131,7 +132,6 @@ ul{
   animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
-
 }
 
 .icons-container{
@@ -162,15 +162,72 @@ ul{
 }
 
 .about-me{
-  width: 100%;
-  height: 100vh;
   z-index: 9999;
   position: relative;
   background: transparent;
+  margin: 7rem auto;
 }
 
-/* .title{
-  color: #09f;
+.about-me > h2 {
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  padding-bottom: 1.5rem;
+  font-size: 2.5rem;
   text-align: center;
-  font-size: 5rem;
-} */
+  position: relative;
+}
+
+.about-me > h2::after {
+  content: '';
+  width: 12%;
+  height: 5px;
+  position: absolute;
+  background: var(--primary);
+  bottom: 0%;
+  left: 44%;
+  border-radius: 10px;
+}
+
+.about-me-container{
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.about-img-container{
+  width: 35%;
+}
+
+.about-img-container > img {
+  width: 100%;
+  border-radius: 50%;
+  border: 10px solid #fff;
+  object-fit: contain;
+  /* overflow: hidden; */
+}
+
+.about-text-container{
+  width: 70%;
+  margin-left: 4rem;
+}
+
+.about-text-container > h2 {
+  color: var(--light);
+  margin: 3rem 0;
+  font-size: 2.5rem;
+}
+
+.about-text-container > p {
+  color: var(--light);
+  font-size: 1.5rem;
+}
+
+.about-text-container > p span {
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.proyecto{
+  position: relative;
+}
