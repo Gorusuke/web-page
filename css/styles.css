@@ -1,9 +1,9 @@
 :root{
   --primary: #0099ff;
   --secondary: #0059ff;
+  --background: #004776;
   --dark: #0a0a0a;
   --light: #f0f0f0;
-  --background: #004776;
   --text: #413737e6;
 }
 
@@ -16,12 +16,10 @@
 }
 
 body{
-  /* overflow: hidden; */
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   z-index: 1;
   scroll-behavior: smooth;
-  /* position: relative; */
 }
 
 a {
@@ -136,16 +134,15 @@ ul{
 
 .icons-container{
   padding-left: 4rem;
-  width: 23%;
   margin-top: 2rem;
   display: flex;
-  justify-content: space-between;
 }
 
 .icons-container > li {
   font-size: 1.3rem;
   border: 1px solid var(--secondary);
   padding: 10px 20px;
+  margin-right: 1rem;
   border-radius: 12px;
   color: var(--secondary);
   font-weight: 500;
@@ -171,7 +168,7 @@ ul{
 .about-me > h2 {
   color: var(--primary);
   text-transform: uppercase;
-  margin-bottom: 4rem;
+  margin-bottom: 7rem;
   padding-bottom: 1.5rem;
   font-size: 2.5rem;
   text-align: center;
@@ -204,7 +201,6 @@ ul{
   border-radius: 50%;
   border: 10px solid #fff;
   object-fit: contain;
-  /* overflow: hidden; */
 }
 
 .about-text-container{
@@ -228,6 +224,141 @@ ul{
   font-weight: 500;
 }
 
-.proyecto{
+.proyectos{
+  position: relative;
+  margin: 12rem auto;
+}
+
+.proyectos > h2 {
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 7rem;
+  padding-bottom: 1.5rem;
+  font-size: 2.5rem;
+  text-align: center;
   position: relative;
 }
+
+.proyectos > h2::after {
+  content: '';
+  width: 12%;
+  height: 5px;
+  position: absolute;
+  background: var(--primary);
+  bottom: 0%;
+  left: 44%;
+  border-radius: 10px;
+}
+
+.proyectos-container{
+  width: 60%;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.proyecto{
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  position: relative;
+  background-color: var(--light);
+}
+
+.proyecto-img-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 75%;
+  transition: all 1s ease;
+}
+
+.proyecto-img-container > img {
+  width: 100%;
+  height: 100%;
+}
+
+.proyecto:hover .proyecto-img-container{
+  height: 0%;
+}
+
+.proyecto-description {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.proyecto-back{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.proyecto-back > p {
+  font-size: 1.4rem;
+  color: var(--text);
+  font-weight: 500;
+  text-align: center;
+}
+
+.proyecto-back > p span {
+  color: var(--secondary);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.proyecto-links {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.proyecto-links a {
+  font-size: 3rem;
+}
+
+.proyecto-content{
+  padding: 0 2rem;
+  color: var(--light);
+}
+
+.proyecto-content > h2{
+  margin-bottom: .5rem;
+  text-align: left;
+  color: var(--primary);
+  text-transform: capitalize;
+  font-size: 1.65rem;
+}
+
+.proyecto-habilities{
+  display: flex;
+}
+
+.proyecto-habilities > li {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.habilidades{
+  position: relative;
+}
+
+.skew-proyects{    
+  position: absolute;
+  /* top: 0; */
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: var(--background);
+  transform: skewY(6deg);
+  transform-origin: top right;
+  z-index: -1;
+}
+
+
