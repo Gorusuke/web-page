@@ -31,6 +31,14 @@ ul{
   list-style: none;
 }
 
+.animation{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+  background-color: transparent;
+}
+
 .header {
   background-color: transparent;
   top: 0;
@@ -85,8 +93,10 @@ ul{
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  background-color: #fff;
-  z-index: 9999;
+  background-color: transparent;
+  /* background-color: #fff; */
+  /* position: relative; */
+  /* z-index: -2; */
 }
 
 .hero-container{
@@ -94,7 +104,25 @@ ul{
 }
 
 .hero-container > h6 {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  /* position: relative; */
+  /* width: min-content; */
+}
+
+.hero-container > h6::after{
+  content: '';
+  width: 3px;
+  height: 30px;
+  margin-top: 8px;
+  background-color: #000;
+  position: absolute;
+  animation: blinking 1s 2s infinite;
+}
+
+@keyframes blinking{
+  0%{background: #000;}
+  50%{background: transparent;}
+  100%{background: #000;}
 }
 
 .hero-container > h1 {
@@ -130,6 +158,7 @@ ul{
   animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
+  z-index: -2; /* Ojo */ 
 }
 
 .icons-container{
@@ -162,7 +191,7 @@ ul{
   z-index: 9999;
   position: relative;
   background: transparent;
-  margin: 7rem auto;
+  margin: 3rem auto 7rem auto;
 }
 
 .about-me > h2 {
@@ -278,13 +307,13 @@ ul{
 .proyecto-img-container > img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .proyecto:hover{
   -webkit-box-shadow: 0px 10px 28px 6px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 10px 28px 6px rgba(0,0,0,0.75);
   box-shadow: 0px 10px 28px 6px rgba(0,0,0,0.75);
-  /* transform: scale(1.02); */
 }
 
 .proyecto:hover .proyecto-img-container{
@@ -368,6 +397,7 @@ ul{
   position: relative;
   margin: 12rem auto 5rem auto;
   background-color: var(--background);
+  z-index: -2;
 }
 
 .habilidades > h2 {
@@ -407,19 +437,46 @@ ul{
 }
 
 .technologies-image{
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
 }
 
 .technologies-image > img {
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   /* height: 100%; */
 }
 
 .technologies > h4 {
   font-size: 1.3rem;
   margin-top: 1rem;
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.sass{
+  width: 85px;
+}
+
+.sass > img {
+  margin-top: 8px;
+}
+
+.firebase{
+  width: 58px;
+}
+
+.mongodb,
+.nextjs{
+  width: 120px;
+}
+
+.mongodb > img {
+  margin-top: 20px;
+}
+
+.nextjs > img {
+  margin-top: 10px;
 }
 
 .contacto{
@@ -501,6 +558,8 @@ ul{
 footer{
   width: 100%;
   background-color: var(--background);
+  z-index: -2;
+  position: relative;
 }
 
 .footer-container{
@@ -517,5 +576,3 @@ footer{
   font-size: 2rem;
   color: var(--primary);
 }
-
-
