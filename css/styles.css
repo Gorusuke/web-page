@@ -13,13 +13,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth
 }
 
 body{
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   z-index: 1;
-  scroll-behavior: smooth;
 }
 
 a {
@@ -45,6 +45,22 @@ ul{
   position: absolute;
   z-index: 99;
   width: 100%;
+  min-height: 60px;
+  /* background-color: var(--light);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  z-index: 99999; */
+  /* position: fixed; */
+}
+
+.header-fixed{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 50%;
+  margin: 0 auto;
+  padding: 1rem;
+  margin-top: -60px;
+  transition: margin-top .3s ease;
 }
 
 .header-container{
@@ -55,6 +71,7 @@ ul{
   margin: 0 auto;
 }
 
+.header-fixed li,
 .header-container li {
   /* font-family: "Montserrat", sans-serif; */
   color: var(--text);
@@ -67,6 +84,11 @@ ul{
   position: relative;
 }
 
+.header-fixed li{
+  padding-top: 0;
+}
+
+.header-fixed li > a::after,
 .header-container li > a::after{
   content: '';
   width: 0%;
@@ -79,10 +101,12 @@ ul{
   transition: all 500ms ease;
 }
 
+.header-fixed li:hover,
 .header-container li:hover {
   color: var(--secondary);
 }
 
+.header-fixed li > a:hover::after,
 .header-container li > a:hover::after{
   width: 130%;
   left: -15%;
@@ -146,19 +170,19 @@ ul{
   width: 100%;
   height: 90%;
   background: var(--background);
-  transform-origin: top left;
   transform: skewY(-10deg);
-  -webkit-animation-name: none-animation;
-  animation-name: none-animation;
-  -webkit-animation-name: initial-animation;
-  animation-name: initial-animation;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-  z-index: -2; /* Ojo */ 
+  transform-origin: top left;
+  animation: skewed 2s ease-in-out 1;
+  z-index: -2;
+}
+
+@keyframes skewed {
+  0% {
+    transform: skewY(0deg);
+  }
+  100% {
+    transform: skewY(-10deg);
+  }
 }
 
 .icons-container{
@@ -255,7 +279,7 @@ ul{
 
 .proyectos{
   position: relative;
-  margin: 12rem auto;
+  margin: 15rem auto 12rem auto;
 }
 
 .proyectos > h2 {
@@ -354,6 +378,11 @@ ul{
 
 .proyecto-links a {
   font-size: 3rem;
+  transition: color .3s ease;
+}
+
+.proyecto-links a:hover {
+  transform: scale(1.1);
 }
 
 .proyecto-content{
@@ -389,7 +418,7 @@ ul{
   background: var(--background);
   transform: skewY(10deg);
   transform-origin: top right;
-  z-index: -1;
+  z-index: -2;
 }
 
 .habilidades{

@@ -1,3 +1,8 @@
+// Aos
+AOS.init({
+  duration: 2000,
+});
+
 // typing
 const typed = new Typed(".typed", {
   strings: ["¡Bienvenido!"],
@@ -11,10 +16,103 @@ const typed = new Typed(".typed", {
   showCursor: false,
 });
 
+// hero-styles
+const likes = [
+  "aprender cosas nuevas",
+  "resolver problemas",
+  "trabajar en equipo",
+];
+let i = 0;
+
+const like = () => {
+  if (i === likes.length - 1) {
+    i = 0;
+  } else {
+    i++;
+  }
+  document.getElementById("likes").innerHTML = likes[i];
+};
+like();
+
+setInterval(() => {
+  like();
+}, 1500);
+
 // Year
 const span = document.getElementById("year");
 const year = new Date();
 span.innerHTML = `${year.getFullYear()}`;
+
+//Scroll
+const start = document.querySelectorAll(".start");
+const aboutMe = document.querySelectorAll(".aboutMe");
+const proyects = document.querySelectorAll(".proyects");
+const hability = document.querySelectorAll(".hability");
+const contact = document.querySelectorAll(".contact");
+console.info(start);
+
+start.forEach((st) => {
+  st.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scroll(0, 0);
+  });
+});
+
+aboutMe.forEach((st) => {
+  st.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scroll(0, 890);
+  });
+});
+
+proyects.forEach((st) => {
+  st.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scroll(0, 1800);
+  });
+});
+
+hability.forEach((st) => {
+  st.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scroll(0, 3800);
+  });
+});
+
+contact.forEach((st) => {
+  st.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scroll(0, 4500);
+  });
+});
+
+// Fixed Header
+
+const header = document.getElementById("header");
+const fixedHeader = document.getElementById("fixed-header");
+const fixedContainer = document.getElementById("header-container");
+
+console.info(header);
+
+window.addEventListener("scroll", () => {
+  let offsetHeader = 800;
+  if (window.scrollY >= offsetHeader) {
+    fixedHeader.style.marginTop = "0px";
+    header.style.backgroundColor = "var(--light)";
+    header.style.boxShadow = "0px 0px 10px 0px rgba(0,0,0,0.75)";
+    header.style.zIndex = "99999";
+    header.style.position = "fixed";
+    fixedContainer.style.display = "none";
+  } else {
+    fixedHeader.style.marginTop = "-60px";
+    header.style.backgroundColor = "transparent";
+    header.style.boxShadow = "none";
+    header.style.position = "absolute";
+    header.style.zIndex = "99";
+    header.style.transition = "all .5s ease-out";
+    fixedContainer.style.display = "flex";
+  }
+});
 
 // Particles
 particlesJS({

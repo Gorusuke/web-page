@@ -3,32 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale= 1.0">  
+  <link rel="icon" href="https://imagenes-pages.s3-sa-east-1.amazonaws.com/favicon.png">
   <title>Jose Garcia | Frontend Developer</title>
   <link rel="stylesheet" href="./css/styles.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/23192939c8.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
     <div id="particles-js" class="animation"></div>
     <!-- Header -->
-    <header class="header">
-      <ul class="header-container">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#sobre-mi">Sobre mi</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+
+    <header id="header" class="header">
+      
+      <!-- Escritorio - fijo -->
+      <ul id="fixed-header" class="header-fixed">
+        <li><a class="start" href="#inicio">Inicio</a></li>
+        <li><a class="aboutMe" href="#sobre-mi">Sobre mi</a></li>
+        <li><a class="proyects" href="#proyectos">Proyectos</a></li>
+        <li><a class="hability" href="#habilidades">Habilidades</a></li>
+        <li><a class="contact" href="#contacto">Contacto</a></li>
       </ul>
+
+      <!-- Escritorio -->
+      <ul id="header-container" class="header-container">
+        <li><a class="start" href="#inicio">Inicio</a></li>
+        <li><a class="aboutMe" href="#sobre-mi">Sobre mi</a></li>
+        <li><a class="proyects" href="#proyectos">Proyectos</a></li>
+        <li><a class="hability" href="#habilidades">Habilidades</a></li>
+        <li><a class="contact" href="#contacto">Contacto</a></li>
+      </ul>
+
     </header>
     <!-- Hero -->
     <section id="inicio" class="hero">
       <div class="hero-container">
         <h6>&#160;<span class="typed"></span></h6>
         <h1>¡Hola! Soy Jose Garcia!
-          <span class="hero-span">Junior Front End developer</span>
-          y me gusta
-          <span class="hero-styles">resolver problemas</span>
+          <span class="hero-span">Junior Front End developer</span> y me gusta
+          <span class="hero-styles" id="likes"></span>
         </h1>
       </div>
         <div>
@@ -60,7 +74,7 @@
     <section id="proyectos" class="proyectos">
       <h2>Proyectos</h2>
       <div class="proyectos-container">
-        <article class="proyecto">
+        <article data-aos="zoom-in" class="proyecto">
           <div class="proyecto-img-container">
             <img src="https://imagenes-pages.s3-sa-east-1.amazonaws.com/SlideShow.png" alt="Slide-page" />
           </div>          
@@ -83,7 +97,7 @@
             </ul>
           </div>
         </article>
-        <article class="proyecto">
+        <article data-aos="zoom-in" class="proyecto">
           <div class="proyecto-img-container">
             <img src="https://imagenes-pages.s3-sa-east-1.amazonaws.com/Profile-cards.png" alt="Tarjeta-de-presentacion" />
           </div>
@@ -106,7 +120,7 @@
             </ul>
         </div>
         </article>
-        <article class="proyecto">
+        <article data-aos="zoom-in" class="proyecto">
           <div class="proyecto-img-container">
             <img src="https://imagenes-pages.s3-sa-east-1.amazonaws.com/Cube.png" alt="slice-cube" />
           </div>
@@ -130,7 +144,7 @@
               </ul>
             </div>
         </article>        
-        <article class="proyecto">
+        <article data-aos="zoom-in" class="proyecto">
           <div class="proyecto-img-container">
             <img src="https://imagenes-pages.s3-sa-east-1.amazonaws.com/Breaking+bad.png" alt="Breaking-bad" />
           </div>
@@ -154,14 +168,14 @@
             </ul>
           </div>
         </article>
-        <article class="proyecto">
+        <article data-aos="zoom-in" class="proyecto">
           <div class="proyecto-img-container">
             <img src="https://imagenes-pages.s3-sa-east-1.amazonaws.com/Owl+gifphy.png" alt="Owl Gifphy" />
           </div>
           <div class="proyecto-description">
             <div class="proyecto-back">
               <p>
-                <span>Owl Gifphy</span> es un buscador de gifs que muestra los resultados por nombre. Ademas puedes ver las tendencias de los ultimos gifs que estan siendo mas buscandos en el momento.
+                <span>Owl Gifphy</span> es un buscador de gifs que atravez de una API muestra los resultados por nombre. Ademas puedes ver las tendencias de los ultimos gifs que estan siendo mas buscados en el momento.
               </p>
               <div class="proyecto-links">
                 <a href="https://github.com/Gorusuke/Owl-Gifphy" target="_blank"><i class="fab fa-github"></i></a>
@@ -179,7 +193,7 @@
           </div>
         </article>
         <div class="skew-proyects"></div>
-        <article class="proyecto">
+        <article data-aos="zoom-in" class="proyecto">
           <div class="proyecto-img-container">
             <img src="https://imagenes-pages.s3-sa-east-1.amazonaws.com/Pokemon+couple.png" alt="Pokemon-Couple" />
           </div>
@@ -209,73 +223,73 @@
     <section id="habilidades" class="habilidades">
       <h2>Habilidades</h2>
       <div class="habilidades-container">
-        <div class="technologies">
+        <div data-aos="fade-up" data-aos-duration="300" class="technologies">
           <div class="technologies-image">
             <img src="https://icons-svgs.s3-sa-east-1.amazonaws.com/images/html.svg" alt="Html5">
           </div>
           <h4>Html5</h4>
         </div>
-        <div class="technologies">
+        <div data-aos="fade-up" data-aos-duration="600" class="technologies">
           <div class="technologies-image">
             <img src="https://icons-svgs.s3-sa-east-1.amazonaws.com/images/css.svg" alt="Css">
           </div>
           <h4>Css</h4>
         </div>
-        <div class="technologies">
+        <div data-aos="fade-up" data-aos-duration="900" class="technologies">
           <div class="technologies-image">
             <img src="https://icons-svgs.s3-sa-east-1.amazonaws.com/images/javascript.svg" alt="Javascript">
           </div>
           <h4>Javascript</h4>
         </div>
-        <div class="technologies">
+        <div data-aos="fade-up" data-aos-duration="1200" class="technologies">
           <div class="technologies-image sass">
             <img src="https://icons-svgs.s3-sa-east-1.amazonaws.com/images/sass.svg" alt="Sass">
           </div>
           <h4>Sass</h4>
         </div>
-        <div class="technologies">
+        <div data-aos="fade-up" data-aos-duration="1500" class="technologies">
           <div class="technologies-image">
             <img src="https://icons-svgs.s3-sa-east-1.amazonaws.com/images/git.svg" alt="Git">
           </div>
           <h4>Git</h4>
         </div>
-        <div class="technologies">
+        <div data-aos="fade-up" data-aos-duration="1800" class="technologies">
           <div class="technologies-image">
             <img src="https://icons-svgs.s3-sa-east-1.amazonaws.com/images/github.svg" alt="Github">
           </div>
           <h4>Github</h4>
         </div>
-        <div class="technologies">
+        <div data-aos="fade-up" data-aos-duration="300" class="technologies">
           <div class="technologies-image">
             <img src="https://icons-svgs.s3-sa-east-1.amazonaws.com/images/react.svg" alt="React">
           </div>
           <h4>React</h4>
         </div>
-        <div class="technologies">
+        <div data-aos="fade-up" data-aos-duration="600" class="technologies">
           <div class="technologies-image">
             <img src="https://icons-svgs.s3-sa-east-1.amazonaws.com/images/redux.svg" alt="Redux">
           </div>
           <h4>Redux</h4>
         </div>
-        <div class="technologies">
+        <div data-aos="fade-up" data-aos-duration="900" class="technologies">
           <div class="technologies-image nextjs">
             <img src="https://icons-svgs.s3-sa-east-1.amazonaws.com/images/next.svg" alt="NextJs">
           </div>
           <h4>NextJs</h4>
         </div>
-        <div class="technologies">
+        <div data-aos="fade-up" data-aos-duration="1200" class="technologies">
           <div class="technologies-image firebase">
             <img src="https://icons-svgs.s3-sa-east-1.amazonaws.com/images/firebase.svg" alt="Firebase">
           </div>
           <h4>Firebase</h4>
         </div>
-        <div class="technologies">
+        <div data-aos="fade-up" data-aos-duration="1500" class="technologies">
           <div class="technologies-image">
             <img src="https://icons-svgs.s3-sa-east-1.amazonaws.com/images/node.svg" alt="NodeJs">
           </div>
           <h4>NodeJs</h4>
         </div>
-        <div class="technologies">
+        <div data-aos="fade-up" data-aos-duration="1800" class="technologies">
           <div class="technologies-image mongodb">
             <img src="https://icons-svgs.s3-sa-east-1.amazonaws.com/images/mongo.svg" alt="MongoDB">
           </div>
@@ -312,6 +326,7 @@
     </footer>
   </div>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="./js/app.js"></script>
