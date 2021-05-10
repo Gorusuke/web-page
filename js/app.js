@@ -58,34 +58,40 @@ const aboutMeMenu = document.getElementById("about-me-menu");
 const proyectsMenu = document.getElementById("proyects-menu");
 const habilityMenu = document.getElementById("hability-menu");
 const contactMenu = document.getElementById("contact-menu");
-// console.info(document.documentElement.scrollHeight);
-// console.info(window.innerHeight);
-// console.info(window.pageYOffset);
 
-function scrollDistance(e, distance) {
+function scrollDistance(e, element) {
   e.preventDefault();
-  window.scroll(0, distance);
-  // let bar =
-  //   document.documentElement.scrollHeight -
-  //   (window.innerHeight + window.pageYOffset);
+  let hash = element.getAttribute("href");
+  let target = document.querySelector(hash);
+  let headerOffset = 100;
+  let elementPosition = target.offsetTop;
+  let offsetPosition = elementPosition - headerOffset;
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth",
+  });
+}
+
+function scrollToReference(e, element) {
+  scrollDistance(e, element);
   menuSide.classList.toggle("active");
   menuMobile.classList.toggle("line");
 }
 
 startMenu.addEventListener("click", (e) => {
-  scrollDistance(e, 0);
+  scrollToReference(e, startMenu);
 });
 aboutMeMenu.addEventListener("click", (e) => {
-  scrollDistance(e, 600);
+  scrollToReference(e, aboutMeMenu);
 });
 proyectsMenu.addEventListener("click", (e) => {
-  scrollDistance(e, 1430);
+  scrollToReference(e, proyectsMenu);
 });
 habilityMenu.addEventListener("click", (e) => {
-  scrollDistance(e, 3700);
+  scrollToReference(e, habilityMenu);
 });
 contactMenu.addEventListener("click", (e) => {
-  scrollDistance(e, 4450);
+  scrollToReference(e, contactMenu);
 });
 
 //Scroll
@@ -97,36 +103,31 @@ const contact = document.querySelectorAll(".contact");
 
 start.forEach((st) => {
   st.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scroll(0, 0);
+    scrollDistance(e, st);
   });
 });
 
 aboutMe.forEach((st) => {
   st.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scroll(0, 890);
+    scrollDistance(e, st);
   });
 });
 
 proyects.forEach((st) => {
   st.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scroll(0, 1800);
+    scrollDistance(e, st);
   });
 });
 
 hability.forEach((st) => {
   st.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scroll(0, 3800);
+    scrollDistance(e, st);
   });
 });
 
 contact.forEach((st) => {
   st.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scroll(0, 4500);
+    scrollDistance(e, st);
   });
 });
 

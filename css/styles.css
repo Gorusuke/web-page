@@ -109,7 +109,6 @@ ul{
   color: var(--secondary);
 }
 
-
 .header-fixed,
 .header-container{
   display: none;
@@ -174,8 +173,8 @@ ul{
   background: var(--background);
   transform: skewY(-20deg);
   transform-origin: top left;
-  animation: skewed 2s ease-in-out 1;
   z-index: -2;
+  animation: skewed 3s ease-in-out 1;
 }
 
 @keyframes skewed {
@@ -607,7 +606,175 @@ footer{
   text-align: center;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 426px) {
+
+  .menu-side {
+    width: 60%;
+  }
+
+  .line::after{
+    width: 40.8%;
+    animation: barra .5s ease-in-out;
+  }
+  
+  @keyframes barra {
+    0%{width: 0;}
+    100%{width: 40.8%}
+  }
+
+  /* Hero */
+  .hero-container{
+    padding-left: 2rem;
+  }
+
+  .hero-container > h6 {
+    font-size: 1.5rem;
+  }
+
+  .hero-container > h6::after{
+    width: 3px;
+    height: 23px;
+    margin-top: 6px;
+  }
+  
+  .hero-container > h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  
+  .icons-container{
+    margin-top: .5rem;
+    padding-left: 2rem;
+  }
+  
+  .icons-container > li {
+    font-size: 1.2rem;
+    padding: 8px 20px;
+  }
+  
+  .icons-container > li > a > i {
+    font-size: 1.2rem;
+  }
+
+  /* About me */
+  
+  .about-me > h2::after {
+    width: 26%;
+    left: 37%;
+  }
+  
+  .about-img-container{
+    width: 50%;
+  }
+  
+  .about-text-container{
+    width: 90%;
+    margin: 4rem auto;
+  }
+
+  /* Proyectos */
+  
+  
+  .proyectos-container{
+    width: 80%;
+  }
+  
+  .proyecto{
+    height: 400px;
+  }
+  
+  .proyecto-back > p {
+    font-size: 1.2rem;
+  }
+  
+  .proyecto-links {
+    margin-top: 2rem;
+  }
+  
+  .proyecto-links a {
+    font-size: 2.5rem;
+  }
+  
+  .proyecto-content{
+    margin-top: 1rem;
+  }
+
+  .proyecto-content > h2{
+    font-size: 1.4rem;
+  }
+  
+  .proyecto-habilities > li {
+    font-size: 1rem;
+  }
+
+  /* Habilidades */
+
+  .proyectos > h2::after {
+    left: 33%;
+    width: 34%;
+  }
+
+  .habilidades > h2::after {
+    width: 34%;
+    left: 33%;
+  }
+
+  .habilidades-container{
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Contacto */
+
+  .contacto > h2::after {
+    width: 30%;
+    left: 35%;
+  }
+
+  .contacto-container{
+    width: 80%;
+  }
+
+  .contacto-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contacto-icons a {
+    margin-top: 2rem;
+    width: 47%;
+    padding: 1.5rem;
+  }
+
+  .contacto-icons a div i {
+    font-size: 2.8rem;
+  }
+
+  .contacto-icons a div p {
+    margin-top: .8rem;
+    font-size: 1.5rem;
+  }
+
+  /* Footer */
+
+  footer{
+    width: 100%;
+    background-color: var(--background);
+    z-index: -2;
+    position: relative;
+  }
+
+  .footer-container{
+    padding: 2rem;
+  }
+
+  .footer-container p {
+    font-size: 2rem;
+  }
+
+}
+
+@media (min-width: 769px) {
 
   /* Header */
   .header {
@@ -638,7 +805,7 @@ footer{
   .header-fixed > ul {
     display: flex;
     justify-content: space-around;
-    width: 50%;
+    width: 90%;
     margin: 0 auto;
   }
 
@@ -646,7 +813,7 @@ footer{
     display: flex;
     justify-content: space-around;
     list-style: none;
-    width: 50%;
+    width: 90%;
     margin: 0 auto;
   }
 
@@ -691,53 +858,33 @@ footer{
   }
 
   /* Hero */
-  .hero-container{
-    padding-left: 4rem;
-  }
 
   .hero-container > h6 {
     font-size: 1.8rem;
-    margin-left: 0;
   }
 
   .hero-container > h6::after{
-    width: 3px;
     height: 30px;
-    margin-top: 8px;
   }
   
   .hero-container > h1 {
-    font-size: 4.5rem;
-    line-height: 5rem;
-  }
-
-  .skew{
-    height: 90%;
-    transform: skewY(-10deg);
-  }
-  
-  @keyframes skewed {
-    100% {
-      transform: skewY(-10deg);
-    }
+    font-size: 3.5rem;
+    line-height: 4rem;
   }
   
   .icons-container{
-    padding-left: 4rem;
     margin-top: 2rem;
   }
   
   .icons-container > li {
     font-size: 1.3rem;
     padding: 10px 20px;
-    border-radius: 12px;
-    margin-right: 1rem;
   }
   
-  .icons-container > li:hover{
+  /* .icons-container > li:hover{
     background-color: var(--secondary);
     color: #fff;  
-  }
+  } */
   
   .icons-container > li > a > i {
     font-size: 1.5rem;
@@ -745,12 +892,6 @@ footer{
 
   /* About me */
 
-  .about-me{
-    z-index: 9999;
-    position: relative;
-    background: transparent;
-    margin: 3rem auto 7rem auto;
-  }
   
   .about-me > h2 {
     padding-bottom: 1.5rem;
@@ -759,32 +900,33 @@ footer{
   }
   
   .about-me > h2::after {
-    width: 12%;
-    left: 44%;
+    width: 24%;
+    left: 39%;
   }
   
   .about-me-container{
     display: flex;
     flex-direction: row;
-    width: 60%;
+    width: 90%;
   }
   
   .about-img-container{
-    width: 35%;
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
   }
   
   .about-img-container > img {
-    border: 10px solid #fff;
+    border: 5px solid #fff;
   }
   
   .about-text-container{
-    width: 70%;
-    margin-left: 4rem;
+    margin: 0;
+    margin-left: 3rem;
   }
   
   .about-text-container > h2 {
-    margin: 3rem 0;
     font-size: 2.5rem;
   }
   
@@ -807,14 +949,12 @@ footer{
   }
   
   .proyectos > h2::after {
-    width: 12%;
-    left: 44%;
+    width: 30%;
+    left: 35%;
   }
   
   .proyectos-container{
-    width: 60%;
-    gap: 3rem;
-    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
   }
   
   .proyecto{
@@ -834,12 +974,12 @@ footer{
     font-size: 1.4rem;
   }
   
-  .proyecto-links {
-    margin-top: 2rem;
-  }
-  
   .proyecto-links a {
     font-size: 3rem;
+  }
+
+  .proyecto-content{
+    margin-top: 0;
   }
   
   .proyecto-content > h2{
@@ -867,19 +1007,19 @@ footer{
   }
 
   .habilidades > h2::after {
-    width: 16%;
-    left: 42%;
+    width: 30%;
+    left: 35%;
   }
 
   .habilidades-container{
-    width: 60%;
+    width: 80%;
     grid-template-columns: repeat(6, 1fr);
     gap: 2rem;  
   }
 
   .technologies-image{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
   }
 
   .technologies > h4 {
@@ -916,50 +1056,128 @@ footer{
   }
 
   .contacto > h2::after {
-    left: 42%;
-    width: 16%;
+    left: 38%;
+    width: 24%;
   }
+}
+
+@media (min-width: 1025px) {
+
+  /* Header */
+
+  .header-fixed > ul {
+    width: 60%;
+  }
+
+  .header-container{
+    width: 60%;
+  }
+  
+  /* Hero */
+  .hero-container{
+    padding-left: 4rem;
+  }
+
+  .hero-container > h6 {
+    font-size: 1.8rem;
+    margin-left: 0;
+  }
+  
+  .hero-container > h1 {
+    font-size: 4.5rem;
+    line-height: 5rem;
+  }
+
+  .skew{
+    height: 90%;
+    transform: skewY(-10deg);
+  }
+  
+  @keyframes skewed {
+    0% {
+      transform: skewY(0deg);
+    }
+    100% {
+      transform: skewY(-10deg);
+    }
+  }
+  
+  .icons-container{
+    padding-left: 4rem;
+  }
+  
+  .icons-container > li:hover{
+    background-color: var(--secondary);
+    color: #fff;  
+  }
+
+  /* About me */
+
+  .about-me{
+    z-index: 9999;
+    position: relative;
+    background: transparent;
+    margin: 3rem auto 7rem auto;
+  }
+  
+  .about-me > h2::after {
+    width: 12%;
+    left: 44%;
+  }
+  
+  .about-me-container{
+    max-width: 1280px;
+  }
+  
+  .about-img-container{
+    width: 35%;
+  }
+  
+  .about-text-container{
+    margin-left: 4rem;
+  }
+  /* 1160 */
+  
+  .about-text-container > h2 {
+    margin: 3rem 0;
+  }
+
+  /* Habilidades */
+  
+  .proyectos > h2::after {
+    width: 12%;
+    left: 44%;
+  }
+  
+  .proyectos-container{
+    width: 90%;
+    max-width: 1160px;
+    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Habilidades */
+
+  .habilidades > h2::after {
+    width: 16%;
+    left: 42%;
+  }
+
+  .habilidades-container{
+    max-width: 1160px;
+    width: 80%;  
+  }
+
+  .technologies-image{
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Contacto */
 
   .contacto-container{
-    width: 45%;
-  }
-
-  .contacto-icons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .contacto-icons a {
-    margin-top: 2rem;
-    width: 47%;
-    padding: 1.5rem;
-  }
-
-  .contacto-icons a div i {
-    font-size: 2.8rem;
-  }
-
-  .contacto-icons a div p {
-    margin-top: .8rem;
-    font-size: 1.5rem;
-  }
-
-  /* Footer */
-
-  footer{
-    width: 100%;
-    background-color: var(--background);
-    z-index: -2;
-    position: relative;
-  }
-
-  .footer-container{
-    padding: 2rem;
-  }
-
-  .footer-container p {
-    font-size: 2rem;
+    max-width: 900px;
+    width: 80%;
   }
 
 }
