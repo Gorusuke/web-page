@@ -49,7 +49,6 @@ const aboutMe = document.querySelectorAll(".aboutMe");
 const proyects = document.querySelectorAll(".proyects");
 const hability = document.querySelectorAll(".hability");
 const contact = document.querySelectorAll(".contact");
-console.info(start);
 
 start.forEach((st) => {
   st.addEventListener("click", (e) => {
@@ -92,24 +91,24 @@ const header = document.getElementById("header");
 const fixedHeader = document.getElementById("fixed-header");
 const fixedContainer = document.getElementById("header-container");
 
-console.info(header);
-
 window.addEventListener("scroll", () => {
-  let offsetHeader = 800;
+  let offsetHeader = 750;
   if (window.scrollY >= offsetHeader) {
     fixedHeader.style.marginTop = "0px";
+    fixedHeader.style.position = "fixed";
     header.style.backgroundColor = "var(--light)";
     header.style.boxShadow = "0px 0px 10px 0px rgba(0,0,0,0.75)";
     header.style.zIndex = "99999";
     header.style.position = "fixed";
+    header.style.display = "flex";
+    header.style.justifyContent = "center";
     fixedContainer.style.display = "none";
-  } else {
-    fixedHeader.style.marginTop = "-60px";
+  } else if (window.scrollY <= offsetHeader) {
+    fixedHeader.style.marginTop = "-65px";
     header.style.backgroundColor = "transparent";
     header.style.boxShadow = "none";
     header.style.position = "absolute";
     header.style.zIndex = "99";
-    header.style.transition = "all .5s ease-out";
     fixedContainer.style.display = "flex";
   }
 });
@@ -118,7 +117,7 @@ window.addEventListener("scroll", () => {
 particlesJS({
   particles: {
     number: {
-      value: 80,
+      value: 100,
       density: {
         enable: true,
         value_area: 800,
@@ -143,7 +142,7 @@ particlesJS({
       },
     },
     opacity: {
-      value: 0.5,
+      value: 0.6,
       random: false,
       anim: {
         enable: false,
@@ -164,14 +163,14 @@ particlesJS({
     },
     line_linked: {
       enable: true,
-      distance: 150,
+      distance: 160,
       color: "#fff",
-      opacity: 0.4,
+      opacity: 0.6,
       width: 1,
     },
     move: {
       enable: true,
-      speed: 6,
+      speed: 3,
       direction: "none",
       random: false,
       straight: false,
@@ -184,44 +183,44 @@ particlesJS({
       },
     },
   },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: {
-        enable: true,
-        mode: "repulse",
-      },
-      onclick: {
-        enable: true,
-        mode: "push",
-      },
-      resize: true,
-    },
-    modes: {
-      grab: {
-        distance: 400,
-        line_linked: {
-          opacity: 1,
-        },
-      },
-      bubble: {
-        distance: 400,
-        size: 40,
-        duration: 2,
-        opacity: 8,
-        speed: 3,
-      },
-      repulse: {
-        distance: 200,
-        duration: 0.4,
-      },
-      push: {
-        particles_nb: 4,
-      },
-      remove: {
-        particles_nb: 2,
-      },
-    },
-  },
+  // interactivity: {
+  //   detect_on: "canvas",
+  //   events: {
+  //     onhover: {
+  //       enable: true,
+  //       mode: "repulse",
+  //     },
+  //     onclick: {
+  //       enable: true,
+  //       mode: "push",
+  //     },
+  //     resize: true,
+  //   },
+  //   modes: {
+  //     grab: {
+  //       distance: 400,
+  //       line_linked: {
+  //         opacity: 1,
+  //       },
+  //     },
+  //     bubble: {
+  //       distance: 400,
+  //       size: 40,
+  //       duration: 2,
+  //       opacity: 8,
+  //       speed: 3,
+  //     },
+  //     repulse: {
+  //       distance: 200,
+  //       duration: 0.4,
+  //     },
+  //     push: {
+  //       particles_nb: 4,
+  //     },
+  //     remove: {
+  //       particles_nb: 2,
+  //     },
+  //   },
+  // },
   retina_detect: true,
 });
