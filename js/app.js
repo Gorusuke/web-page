@@ -43,6 +43,51 @@ const span = document.getElementById("year");
 const year = new Date();
 span.innerHTML = `${year.getFullYear()}`;
 
+// Menu Mobile
+const barra = document.getElementById("btnMenu");
+const menuSide = document.querySelector(".menu-side");
+const menuMobile = document.querySelector(".menu-mobile");
+
+barra.addEventListener("click", function () {
+  menuSide.classList.toggle("active");
+  menuMobile.classList.toggle("line");
+});
+
+const startMenu = document.getElementById("start-menu");
+const aboutMeMenu = document.getElementById("about-me-menu");
+const proyectsMenu = document.getElementById("proyects-menu");
+const habilityMenu = document.getElementById("hability-menu");
+const contactMenu = document.getElementById("contact-menu");
+// console.info(document.documentElement.scrollHeight);
+// console.info(window.innerHeight);
+// console.info(window.pageYOffset);
+
+function scrollDistance(e, distance) {
+  e.preventDefault();
+  window.scroll(0, distance);
+  // let bar =
+  //   document.documentElement.scrollHeight -
+  //   (window.innerHeight + window.pageYOffset);
+  menuSide.classList.toggle("active");
+  menuMobile.classList.toggle("line");
+}
+
+startMenu.addEventListener("click", (e) => {
+  scrollDistance(e, 0);
+});
+aboutMeMenu.addEventListener("click", (e) => {
+  scrollDistance(e, 600);
+});
+proyectsMenu.addEventListener("click", (e) => {
+  scrollDistance(e, 1430);
+});
+habilityMenu.addEventListener("click", (e) => {
+  scrollDistance(e, 3700);
+});
+contactMenu.addEventListener("click", (e) => {
+  scrollDistance(e, 4450);
+});
+
 //Scroll
 const start = document.querySelectorAll(".start");
 const aboutMe = document.querySelectorAll(".aboutMe");
@@ -87,29 +132,14 @@ contact.forEach((st) => {
 
 // Fixed Header
 
-const header = document.getElementById("header");
 const fixedHeader = document.getElementById("fixed-header");
-const fixedContainer = document.getElementById("header-container");
 
 window.addEventListener("scroll", () => {
   let offsetHeader = 750;
   if (window.scrollY >= offsetHeader) {
     fixedHeader.style.marginTop = "0px";
-    fixedHeader.style.position = "fixed";
-    header.style.backgroundColor = "var(--light)";
-    header.style.boxShadow = "0px 0px 10px 0px rgba(0,0,0,0.75)";
-    header.style.zIndex = "99999";
-    header.style.position = "fixed";
-    header.style.display = "flex";
-    header.style.justifyContent = "center";
-    fixedContainer.style.display = "none";
   } else if (window.scrollY <= offsetHeader) {
-    fixedHeader.style.marginTop = "-65px";
-    header.style.backgroundColor = "transparent";
-    header.style.boxShadow = "none";
-    header.style.position = "absolute";
-    header.style.zIndex = "99";
-    fixedContainer.style.display = "flex";
+    fixedHeader.style.marginTop = "-90px";
   }
 });
 
