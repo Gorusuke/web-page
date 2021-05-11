@@ -13,7 +13,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth
 }
 
 body{
@@ -169,7 +168,7 @@ ul{
   position: absolute;
   top: 100%;
   width: 100%;
-  height: 130%;
+  height: 900px;
   background: var(--background);
   transform: skewY(-20deg);
   transform-origin: top left;
@@ -656,6 +655,20 @@ footer{
     font-size: 1.2rem;
   }
 
+  .skew{
+    height: 900px;
+    transform: skewY(-13deg);
+  }
+  
+  @keyframes skewed {
+    0% {
+      transform: skewY(0deg);
+    }
+    100% {
+      transform: skewY(-13deg);
+    }
+  }
+
   /* About me */
   
   .about-me > h2::after {
@@ -664,7 +677,7 @@ footer{
   }
   
   .about-img-container{
-    width: 50%;
+    width: 42%;
   }
   
   .about-text-container{
@@ -881,17 +894,26 @@ footer{
     padding: 10px 20px;
   }
   
-  /* .icons-container > li:hover{
-    background-color: var(--secondary);
-    color: #fff;  
-  } */
-  
   .icons-container > li > a > i {
     font-size: 1.5rem;
   }
 
-  /* About me */
+  
+  .skew{
+    height:850px;
+    transform: skewY(-13deg);
+  }
+  
+  @keyframes skewed {
+    0% {
+      transform: skewY(0deg);
+    }
+    100% {
+      transform: skewY(-13deg);
+    }
+  }
 
+  /* About me */
   
   .about-me > h2 {
     padding-bottom: 1.5rem;
@@ -1012,7 +1034,6 @@ footer{
   }
 
   .habilidades-container{
-    width: 80%;
     grid-template-columns: repeat(6, 1fr);
     gap: 2rem;  
   }
@@ -1031,12 +1052,12 @@ footer{
   }
 
   .firebase{
-    width: 58px;
+    width: 50px;
   }
 
   .mongodb,
   .nextjs{
-    width: 120px;
+    width: 110px;
   }
 
   .nextjs > img {
@@ -1089,7 +1110,7 @@ footer{
   }
 
   .skew{
-    height: 90%;
+    height: 900px;
     transform: skewY(-10deg);
   }
   
@@ -1166,11 +1187,6 @@ footer{
   .habilidades-container{
     max-width: 1160px;
     width: 80%;  
-  }
-
-  .technologies-image{
-    width: 70px;
-    height: 70px;
   }
 
   /* Contacto */
