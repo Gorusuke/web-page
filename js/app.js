@@ -3,19 +3,6 @@ AOS.init({
   duration: 2000,
 });
 
-// typing
-const typed = new Typed(".typed", {
-  strings: ["¡Bienvenido!"],
-  // stringsElement: "#cadena-texto",
-  typeSpeed: 100,
-  backSpeed: 50,
-  smartBackspace: true,
-  backDelay: 3500,
-  loop: true,
-  loopCount: false,
-  showCursor: false,
-});
-
 // hero-styles
 const likes = [
   "aprender cosas nuevas",
@@ -34,9 +21,7 @@ const like = () => {
 };
 like();
 
-setInterval(() => {
-  like();
-}, 1500);
+setInterval(like, 1500);
 
 // Year
 const span = document.getElementById("year");

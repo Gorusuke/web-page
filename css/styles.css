@@ -189,7 +189,7 @@ ul{
   }
 }
 
-.icons-container{
+.icons-container {
   padding-left: 1rem;
   display: flex;
   margin-top: -20px;
@@ -197,17 +197,22 @@ ul{
 
 .icons-container > li {
   font-size: .8rem;
-  border: 1px solid var(--secondary);
-  padding: 5px 10px;
-  border-radius: 8px;
   color: var(--secondary);
   font-weight: 500;
-  transition: all .3s ease;
   margin-top: .5rem;
   margin-right: .7rem;
 }
 
-.icons-container > li:hover{
+.icons-container a {
+  border-radius: 8px;
+  border: 1px solid var(--secondary);
+  display: block;
+  overflow: hidden;
+  padding: 5px 10px;
+  transition: background-color .3s ease;
+}
+
+.icons-container a:hover{
   background-color: var(--secondary);
   color: #fff;  
 }
@@ -434,8 +439,6 @@ ul{
   padding: 4rem 0;
   position: relative;
   margin: 5rem auto;
-  background-color: var(--background);
-  z-index: -2;
 }
 
 .habilidades > h2 {
@@ -611,7 +614,6 @@ footer{
 }
 
 @media (min-width: 426px) {
-
   .menu-side {
     width: 60%;
   }
@@ -647,12 +649,15 @@ footer{
   }
   
   .icons-container{
-    margin-top: .5rem;
+    margin-top: 1rem;
     padding-left: 2rem;
   }
   
   .icons-container > li {
     font-size: 1.2rem;
+  }
+
+  .icons-container a {
     padding: 8px 20px;
   }
   
@@ -896,7 +901,6 @@ footer{
   
   .icons-container > li {
     font-size: 1.3rem;
-    padding: 10px 20px;
   }
   
   .icons-container > li > a > i {
@@ -1130,11 +1134,6 @@ footer{
   
   .icons-container{
     padding-left: 4rem;
-  }
-  
-  .icons-container > li:hover{
-    background-color: var(--secondary);
-    color: #fff;  
   }
 
   /* About me */
